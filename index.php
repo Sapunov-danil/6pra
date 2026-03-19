@@ -84,12 +84,14 @@
 	<script>
 		function SendMessage(sender) {
 			let Message = sender.parentElement.children[0].value;
+			let Token = sender.parentElement.children[1].value;
 			let IdPost = sender.parentElement.id;
 			if(Message == "") return;
 
 			var Data = new FormData();
 			Data.append("Message", Message);
 			Data.append("IdPost", IdPost);
+			Data.append("Token", Token);
 			
 			$.ajax({
 					url         : 'ajax/message.php',
