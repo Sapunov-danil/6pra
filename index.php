@@ -1,6 +1,8 @@
 <?php
 	session_start();
 	include("./settings/connect_datebase.php");
+	$CSRF = password_hash(password: "SECRET", algo: PASSWORD_DEFAULT);
+	$_SESSION["CSRF"] = $CSRF;
 ?>
 <!DOCTYPE HTML>
 <html>
